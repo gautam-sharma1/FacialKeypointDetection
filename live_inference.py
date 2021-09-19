@@ -44,7 +44,6 @@ def rescale(image, output_size):
 
 def inference(cam_number, plot=False, PATH="./detector_architectures/haarcascade_frontalface_default.xml"):
     cap = cv2.VideoCapture(cam_number)
-
         # load in a haar cascade classifier for detecting frontal faces
     face_cascade = cv2.CascadeClassifier(
         './detector_architectures/haarcascade_frontalface_default.xml')
@@ -60,7 +59,7 @@ def inference(cam_number, plot=False, PATH="./detector_architectures/haarcascade
         # run the detector
         # the output here is an array of detections; the corners of each detection box
         # if necessary, modify these parameters until you successfully identify every face in a given image
-        cv2.imwrite("file", frame,None)
+        #cv2.imwrite("file", frame,None)
         faces = face_cascade.detectMultiScale(frame, 1.5, 2, minSize=(100,100), maxSize=(500,500))
 
         if len(faces) == 0:
@@ -71,12 +70,8 @@ def inference(cam_number, plot=False, PATH="./detector_architectures/haarcascade
         image_copy = frame
         # loop over the detected faces, mark the image where each face is found
 
-        #
-        # if len(faces) > 1:
-        #     faces = faces[0]
-
         with torch.no_grad():
-                print(faces)
+
                 x, y, w, h = faces[0]
                 # draw a rectangle around each detected face
                 # you may also need to change the width of the rectangle drawn depending on image resolution
@@ -100,16 +95,14 @@ def inference(cam_number, plot=False, PATH="./detector_architectures/haarcascade
                 if plot:
                     # using opencv since it's faster than matplotlib
                     for i in range(0,67):
-                        cv2.circle(frame_to_plot,(output[0][i, 0], output[0][i, 1]), radius=2,color=[128,255,0])
+                        cv2.circle(frame_to_plot,(output[0][i, 0], output[0][i, 1]), radius=2,color=[255,0,0])
                     cv2.imshow("image", frame_to_plot)
-                else:
-                    return output[0], rescale(image_copy, 224)
-                    break
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     cap.release()
+    out.release()
     cv2.destroyAllWindows()
 
 

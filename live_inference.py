@@ -46,13 +46,12 @@ def inference(cam_number, plot=False, PATH="./detector_architectures/haarcascade
     cap = cv2.VideoCapture(cam_number)
 
         # load in a haar cascade classifier for detecting frontal faces
-        # TODO: change to PATH
     face_cascade = cv2.CascadeClassifier(
-        '/Users/gautamsharma/Desktop/Python/CVND_Exercises/P1_Facial_Keypoints/detector_architectures/haarcascade_frontalface_default.xml')
+        './detector_architectures/haarcascade_frontalface_default.xml')
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = Net()
-    model.load_state_dict(torch.load('saved_models/keypoints_model_1-2.pt', map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load('./saved_models/keypoints_model_1-2.pt', map_location=torch.device('cpu')))
     model.to(device)
     model.eval()
 

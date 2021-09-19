@@ -1,4 +1,6 @@
 # import necessary resources
+
+## WORK IN PROGRESS
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
@@ -18,7 +20,7 @@ def mini_snap(path = './images/sunglasses.png'):
     # load in a haar cascade classifier for detecting frontal faces
     # TODO: change to PATH
     face_cascade = cv2.CascadeClassifier(
-        '/Users/gautamsharma/Desktop/Python/CVND_Exercises/P1_Facial_Keypoints/detector_architectures/haarcascade_frontalface_default.xml')
+        'detector_architectures/haarcascade_frontalface_default.xml')
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = Net()

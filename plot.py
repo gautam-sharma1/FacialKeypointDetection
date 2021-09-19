@@ -82,8 +82,8 @@ if __name__ == "__main__":
     from transforms import *
 
     # Construct the dataset
-    face_dataset = FacialKeypointsDataset(csv_file='/Users/gautamsharma/Desktop/Python/CVND_Exercises/P1_Facial_Keypoints/data/training_frames_keypoints.csv',
-                                          dataset_location='/Users/gautamsharma/Desktop/Python/CVND_Exercises/P1_Facial_Keypoints/data/training')
+    face_dataset = FacialKeypointsDataset(csv_file='./data/training_frames_keypoints.csv',
+                                          dataset_location='./data/training')
 
     # print some stats about the dataset
     print('Length of dataset: ', len(face_dataset))

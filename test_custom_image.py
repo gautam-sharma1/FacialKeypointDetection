@@ -9,8 +9,7 @@ import matplotlib.image as mpimg
 import argparse
 
 parser = argparse.ArgumentParser(description='Custom image testing')
-parser.add_argument('-ip', '--image_path', type=str, default="./detector_architectures/haarcascade_frontalface_default.xml", metavar='', help='Path to custom image')
-parser.add_argument('-fp', '--filter_path', type=str, default="./detector_architectures/haarcascade_frontalface_default.xml", metavar='', help='Path to custom image')
+parser.add_argument('-ip', '--image_path', type=str, default="./images/gautam.png", metavar='', help='Path to custom image')
 group = parser.add_mutually_exclusive_group()
 group.add_argument('-q', '--quiet', action='store_true', help='print quiet')
 group.add_argument('-v', '--verbose', action='store_true', help='print verbose')
@@ -51,7 +50,7 @@ def main(PATH='./images/gautam.png'):
     # Instantiate and setup model
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = Net()
-    model.load_state_dict(torch.load('saved_models/keypoints_model_1-2.pt',map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load('./saved_models/keypoints_model_1-2.pt',map_location=torch.device('cpu')))
     model.to(device)
     model.eval()
 
@@ -86,4 +85,4 @@ def main(PATH='./images/gautam.png'):
 
 
 if __name__ == "__main__":
-    main()
+    main(args.image_path)

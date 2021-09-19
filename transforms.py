@@ -131,8 +131,8 @@ if __name__ == "__main__":
 
                                         ])
     # Construct the dataset
-    transformed_dataset = FacialKeypointsDataset(csv_file='/Users/gautamsharma/Desktop/Python/CVND_Exercises/P1_Facial_Keypoints/data/training_frames_keypoints.csv',
-                                          dataset_location='/Users/gautamsharma/Desktop/Python/CVND_Exercises/P1_Facial_Keypoints/data/training',transforms=data_transform)
+    transformed_dataset = FacialKeypointsDataset(csv_file='./data/training_frames_keypoints.csv',
+                                          dataset_location='./data/training',transforms=data_transform)
 
     # print some stats about the dataset
     print('Length of dataset: ', len(transformed_dataset))

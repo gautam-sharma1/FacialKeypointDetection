@@ -102,7 +102,6 @@ def inference(cam_number, plot=False, PATH="./detector_architectures/haarcascade
             break
 
     cap.release()
-    out.release()
     cv2.destroyAllWindows()
 
 

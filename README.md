@@ -41,10 +41,12 @@ conda install pytorch torchvision torchaudio cpuonly -c pytorch
 ```live_inference.py``` uses a webcam to make predictions as follows:
 
 
-It can be run as
+It can be run as:
+
 ```sh
 python3 live_inference.py -cam 1
 ```
+![](images/result.gif)
 > Note: If you are using a built in camera, give ```0``` as an argument to ```-cam```.
 
 ```model.py``` defines another CNN architecture although this architecture is not used in training. 

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-The Facial Keypoint Detection project uses ResNet 51 convolutional neural network (CNN) to find 68 facial keypoints on a face. The keypoints are positioned on the features of a face, such as the eyebrow, nose, and mouth. The points could therefore be used in a number of applications including emotion detection and facial feature classification.
+The Facial Keypoint Detection project uses ```ResNet 51``` convolutional neural network (CNN) to find 68 facial keypoints on a face. The keypoints are positioned on the features of a face, such as the eyebrow, nose, and mouth. The points could therefore be used in a number of applications including emotion detection and facial feature classification.
 
 The pretrained ResNet 51 network can be downloaded from my [Google Drive]. 
 

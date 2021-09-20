@@ -8,7 +8,7 @@ The pretrained ResNet 51 network can be downloaded from my [Google Drive].
 
 The following plot shows the training `(blue)` and validation `(orange)` losses respectively 
 
-![alt text](data/Loss.png)
+![alt text](images/Loss.png)
 
 ## Installation
 
